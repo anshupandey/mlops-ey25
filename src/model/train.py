@@ -21,7 +21,7 @@ def main(args):
     X_train, X_test, y_train, y_test = split_data(df)
 
     # train model
-    model = train_model(args.reg_rate, X_trai, y_train)
+    model = train_model(args.reg_rate, X_train, y_train)
 
 
 def get_csvs_df(path):
