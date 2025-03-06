@@ -1,15 +1,15 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
 command: >-
-  python 
-  --
-  --
+  python train.py
+  --training_data ${{inputs.training_data}}
+  --reg_rate ${{inputs.reg_rate}}
 inputs:
   training_data: 
     type: uri_folder 
-    path: 
+    path: azureml://subscriptions/53eb2592-79d7-4d14-a92a-b97966ccf1c9/resourcegroups/bdc/workspaces/ey2025/datastores/workspaceblobstore/paths/LocalUpload/ff469ba855467299203a8f860ea1bd33/data/
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
-experiment_name: 
-description: 
+compute: aml-compute
+experiment_name: diabetes-mlops
+description: A demo diabetes classification model
