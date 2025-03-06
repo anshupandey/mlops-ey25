@@ -1,7 +1,7 @@
 name: Code checks
 
 on:
-  pull:
+  pull_request:
 
 jobs:
   job1:
